@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'montserrat', sans-serif;
+  }
+  
+  #app {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+  
+  #app.warm {
+    
+  }
+  
+  #app.cold {
+  
+  }
+  
+  
+  main {
+    min-height: 100vh;
+    padding: 25px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
+  }
+  
+  .search-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .search-box .search-bar {
+    display: block;
+    width: 100%;
+    padding: 5px 15px;
+  
+    color: #313131;
+    font-size: 20px;
+    
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: 0px 0px 8px rgba(255,255,255, 0.25);
+    background-color: rgba(255,255,255, 1);
+    border-radius: 16px 16px 16px 16px;
+    transition: 0.4s;
+  }
+  
+  .search-box .search-bar:focus {
+    box-shadow: 0px 0px 16px rgba(255,255,255, 0.25);
+    background-color: rgba(255,255,255, 0.75);
+    border-radius: 16px 0px 16px 0px;
+  }
+  
+  .weather-box .location {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 1px 3px rgba(0,0,0,0.25);
+  }
+  
+  .location-box .date {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .weather-box {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 10px 0px;
+    padding: 2em;
+    text-align: center;
+  }
+  
+  .weather-box .temp {
+    display: inline-block;
+    padding: 10px 25px;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 500;
+    text-shadow: 3px 6px rgba(0,0,0,0.25);
+    background-color: rgba(255,255,255, 0);
+    margin: 10px 0px;
+  }
+  
+  .weather-box .weather {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 3px 6px rgba(0,0,0,0.25);
+  }
+
+  .forecast-box {
+    color: white;
+  }
+
+  .forecast-box .day-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    margin: 10px 0px;
+    padding: 0.5em 1em;
+    text-align: center;
+  }
+
+  .forecast-box .day-box .day {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(212, 127, 0);
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 0.2em;
+    text-align: center;
+  }
+
+  .forecast-box .hour-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    margin: 10px 0px;
+    padding: 0.2em;
+    text-align: center;
+  }
+
+  .forecast-box .hour-box .hour {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(212, 127, 0);
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 0.1em;
+    text-align: center;
+  }
+
+  /* Float four columns side by side */
+.column {
+  float: left;
+  width: 20%;
+  padding: 0 10px;
+}
+
+.column-2 {
+  float: left;
+  width: 33%;
+  padding: 0 2px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.button {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radis: 10px;
+  color: #fff;
+  font-size: 1em;
+  padding: 0.25em 1em;
+}
+
+.floated-right {
+  float: right;
+}
